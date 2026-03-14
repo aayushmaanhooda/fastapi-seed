@@ -1,0 +1,26 @@
+.PHONY: dev test lint format
+
+dev:
+	uv run uvicorn app.main:app --reload
+
+test:
+	uv run pytest
+
+lint:
+	uv run ruff check .
+
+format:
+	uv run ruff format .
+{% if use_docker %}
+
+docker-up:
+	docker compose up --build
+
+docker-down:
+	docker compose down
+{% endif %}
+{% if use_locust %}
+
+load-test:
+	uv run locust -f tests/load/locustfile.py
+{% endif %}

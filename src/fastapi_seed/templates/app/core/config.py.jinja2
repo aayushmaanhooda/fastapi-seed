@@ -1,0 +1,17 @@
+from pydantic_settings import BaseSettings
+
+
+class Settings(BaseSettings):
+    PROJECT_NAME: str = "{{ project_name }}"
+    VERSION: str = "0.1.0"
+    DEBUG: bool = False
+{% if database == "postgresql" %}
+    DATABASE_URL: str = "postgresql+psycopg2://postgres:postgres@localhost:5432/{{ project_name }}"
+{% elif database == "sqlite" %}
+    DATABASE_URL: str = "sqlite:///./{{ project_name }}.db"
+{% endif %}
+
+    model_config = {"env_file": ".env"}
+
+
+settings = Settings()

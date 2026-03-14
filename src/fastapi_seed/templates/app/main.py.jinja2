@@ -1,0 +1,36 @@
+{% if setup_type == "advanced" %}
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+
+from app.core.config import settings
+from app.core.logger import logger
+from app.routers import health
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    logger.info("Starting %s v%s", settings.PROJECT_NAME, settings.VERSION)
+    yield
+    logger.info("Shutting down")
+
+
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    version=settings.VERSION,
+    lifespan=lifespan,
+)
+{% else %}
+from fastapi import FastAPI
+
+from app.routers import health
+
+app = FastAPI()
+{% endif %}
+
+app.include_router(health.router)
+
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to {{ project_name }}"}
