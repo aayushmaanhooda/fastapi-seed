@@ -16,10 +16,10 @@ from rich import print as rprint
 # ◇ hollow while active → replaced by ✓ green after answered
 _style = Style(
     [
-        ("qmark", "fg:#7c3aed bold"),        # ◇ purple hollow diamond
-        ("question", "fg:#a78bfa bold"),     # purple question text
-        ("answer", "fg:#10b981 bold"),       # green answer (fallback if no tty)
-        ("pointer", "fg:#7c3aed bold"),      # purple arrow
+        ("qmark", "fg:#7c3aed bold"),  # ◇ purple hollow diamond
+        ("question", "fg:#a78bfa bold"),  # purple question text
+        ("answer", "fg:#10b981 bold"),  # green answer (fallback if no tty)
+        ("pointer", "fg:#7c3aed bold"),  # purple arrow
         ("highlighted", "fg:#7c3aed bold"),
         ("selected", "fg:#10b981"),
         ("separator", "fg:#6b7280"),
@@ -93,8 +93,8 @@ def ask(project_name: str | None = None) -> dict:
 
     return {
         "project_name": project_name,
-        "setup_type": setup_type.split()[0].lower(),   # "minimal" or "advanced"
+        "setup_type": setup_type.split()[0].lower(),  # "minimal" or "advanced"
         "use_docker": use_docker,
-        "database": database,               # "postgresql", "sqlite", or "none"
+        "database": database,  # "postgresql", "sqlite", or "none"
         "use_locust": use_locust,
     }
