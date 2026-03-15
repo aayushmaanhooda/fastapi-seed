@@ -1,8 +1,6 @@
 # 🌱 fastapi-seed
 
 [![PyPI version](https://img.shields.io/pypi/v/fastapi-seed.svg)](https://pypi.org/project/fastapi-seed/)
-[![Downloads](https://img.shields.io/pypi/dm/fastapi-seed.svg)](https://pypi.org/project/fastapi-seed/)
-[![Python](https://img.shields.io/pypi/pyversions/fastapi-seed.svg)](https://pypi.org/project/fastapi-seed/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Scaffold a production-ready FastAPI project in seconds.**
