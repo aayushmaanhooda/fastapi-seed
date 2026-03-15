@@ -5,8 +5,11 @@
   <b>A CLI scaffold tool for FastAPI projects.</b><br/>
 </p>
 
-<p align="left">
-  Like <code>create-vite</code> but for Python - answer few questions, get a production-ready or hobby-ready FastAPI project instantly.
+<p align="center">
+  Stop copy-pasting project structures. One command, five questions —<br/>
+  and your FastAPI project is <b>scaffolded, installed, and ready to run.</b><br/><br/>
+  Batteries included: <code>uv</code> · Docker · PostgreSQL · CI/CD · Locust load testing.<br/>
+  No tutorial bloat. No manual setup. Just open your editor and start building.
 </p>
 
 <p align="center">
