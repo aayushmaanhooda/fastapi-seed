@@ -11,6 +11,7 @@ Why Jinja2?
 """
 
 import subprocess
+import sys
 from pathlib import Path
 
 from jinja2 import Environment, PackageLoader, StrictUndefined
@@ -107,6 +108,7 @@ def run_uv_sync(dest: Path) -> subprocess.CompletedProcess:
         ["uv", "sync"],
         cwd=dest,
         capture_output=False,
+        shell=sys.platform == "win32",
     )
 
 
@@ -116,4 +118,5 @@ def run_pre_commit_install(dest: Path) -> subprocess.CompletedProcess:
         ["uv", "run", "pre-commit", "install"],
         cwd=dest,
         capture_output=False,
+        shell=sys.platform == "win32",
     )
