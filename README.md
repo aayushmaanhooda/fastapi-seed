@@ -2,14 +2,15 @@
   <img src="banner.png" alt="fastapi-seed" width="600"/>
 </p>
 
-### 🌱 Scaffold a production-ready or hobby-ready FastAPI project setup in seconds.
+<p align="center">
+  <b>A CLI scaffold tool for FastAPI projects.</b><br/>
+  Like <code>create-vite</code> but for Python — answer 5 questions, get a production-ready FastAPI project instantly.
+</p>
 
-[![PyPI version](https://img.shields.io/pypi/v/fastapi-seed.svg)](https://pypi.org/project/fastapi-seed/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-<!-- **Scaffold a production-ready or hobby-ready FastAPI project in seconds.** -->
-
-Like `create-vite` but for Python, answer 5 questions, get a fully structured FastAPI project ready to run.
+<p align="center">
+  <a href="https://pypi.org/project/fastapi-seed/"><img src="https://img.shields.io/pypi/v/fastapi-seed.svg" alt="PyPI version"/></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"/></a>
+</p>
 
 ```bash
 uvx fastapi-seed init my-project   # scaffold into new folder
