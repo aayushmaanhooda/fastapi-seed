@@ -36,12 +36,33 @@ def _main() -> None:
 
 def _banner() -> None:
     """Print a minimal welcome banner."""
+    # Pure pixel font — only █ and spaces, like DEEP AGENTS style
+    # Each letter: 3 wide, 5 tall, separated by 1 space
+    fastapi_rows = [
+        "███  █   ██ ███  █  ██  ███",
+        "█   █ █ █    █  █ █ █ █  █ ",
+        "██  ███  ██  █  ███ ██   █ ",
+        "█   █ █   █  █  █ █ █    █ ",
+        "█   █ █ ██   █  █ █ █   ███",
+    ]
+    seed_rows = [
+        " ██ ███ ███ ██ ",
+        "█   █   █   █ █",
+        " ██ ██  ██  █ █",
+        "  █ █   █   █ █",
+        "██  ███ ███ ██ ",
+    ]
+    print()
     text = Text()
-    text.append("🌱  ")
-    text.append("fastapi", style="bold #7c3aed")
-    text.append("-seed", style="bold #10b981")
-    text.append("  ·  scaffold FastAPI projects in seconds", style="dim")
-    rprint(Panel(text, border_style="dim", padding=(0, 2)))
+    for i, (f, s) in enumerate(zip(fastapi_rows, seed_rows)):
+        text.append(f, style="bold #7c3aed")
+        text.append("  ")
+        text.append(s, style="bold #10b981")
+        if i < 4:
+            text.append("\n")
+    text.append("\n\nscaffold FastAPI projects in seconds", style="dim")
+    rprint(Panel(text, border_style="dim #7c3aed", padding=(0, 2), expand=False))
+    print()
     print()
 
 

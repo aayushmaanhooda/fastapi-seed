@@ -1,5 +1,13 @@
 # 🌱 fastapi-seed
 
+```
+███  █   ██ ███  █  ██  ███   ██ ███ ███ ██
+█   █ █ █    █  █ █ █ █  █   █   █   █   █ █
+██  ███  ██  █  ███ ██   █    ██ ██  ██  █ █
+█   █ █   █  █  █ █ █    █     █ █   █   █ █
+█   █ █ ██   █  █ █ █   ███  ██  ███ ███ ██
+```
+
 [![PyPI version](https://img.shields.io/pypi/v/fastapi-seed.svg)](https://pypi.org/project/fastapi-seed/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
