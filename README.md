@@ -2,7 +2,7 @@
   <img src="banner.png" alt="fastapi-seed" width="600"/>
 </p>
 
-<p align="center">
+<p align="left">
   <b>A CLI scaffold tool for FastAPI projects.</b><br/>
   Like <code>create-vite</code> but for Python - answer few questions, get a production-ready or hobby-ready FastAPI project instantly.
 </p>
