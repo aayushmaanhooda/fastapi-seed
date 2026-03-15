@@ -68,8 +68,11 @@ def _banner() -> None:
 
 def _success_panel(project_name: str, dest: Path, cfg: dict) -> None:
     """Print the post-scaffold instructions."""
-    lines = [f"[bold green]✓[/] Project [bold]{project_name}[/] created",
-             "[bold green]✓[/] Dependencies installed via uv", ""]
+    lines = [
+        f"[bold green]✓[/] Project [bold]{project_name}[/] created",
+        "[bold green]✓[/] Dependencies installed via uv",
+        "",
+    ]
 
     if dest.name != ".":
         lines.append(f"  [dim]cd[/] [bold]{dest.name}[/]")
@@ -125,20 +128,28 @@ def init(
     rprint("[bold green]✓[/] Files generated")
 
     # Run uv sync
-    with console.status("[bold #7c3aed]Installing dependencies (uv sync)...[/]", spinner="dots"):
+    with console.status(
+        "[bold #7c3aed]Installing dependencies (uv sync)...[/]", spinner="dots"
+    ):
         result = run_uv_sync(dest)
 
     if result.returncode != 0:
-        rprint("[bold red]✗[/] uv sync failed — run it manually inside the project folder.")
+        rprint(
+            "[bold red]✗[/] uv sync failed — run it manually inside the project folder."
+        )
     else:
         rprint("[bold green]✓[/] Dependencies installed")
 
     # Advanced: wire up pre-commit hooks automatically
     if cfg["setup_type"] == "advanced":
-        with console.status("[bold #7c3aed]Setting up pre-commit hooks...[/]", spinner="dots"):
+        with console.status(
+            "[bold #7c3aed]Setting up pre-commit hooks...[/]", spinner="dots"
+        ):
             hook_result = run_pre_commit_install(dest)
         if hook_result.returncode != 0:
-            rprint("[bold red]✗[/] pre-commit install failed — run it manually: uv run pre-commit install")
+            rprint(
+                "[bold red]✗[/] pre-commit install failed — run it manually: uv run pre-commit install"
+            )
         else:
             rprint("[bold green]✓[/] Pre-commit hooks installed")
 

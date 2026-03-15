@@ -67,7 +67,9 @@ def test_main_py_is_minimal(tmp_path: Path):
     generate(MINIMAL_CFG, tmp_path)
     content = (tmp_path / "app" / "main.py").read_text(encoding="utf-8")
     lines = [line for line in content.splitlines() if line.strip()]
-    assert len(lines) <= 20, f"main.py has {len(lines)} non-empty lines — keep it under 20"
+    assert len(lines) <= 20, (
+        f"main.py has {len(lines)} non-empty lines — keep it under 20"
+    )
 
 
 def test_project_name_in_main(tmp_path: Path):

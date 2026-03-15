@@ -43,29 +43,29 @@ def _file_map(cfg: dict) -> list[tuple[str, str]]:
 
     files = [
         # ── app core ────────────────────────────────────────
-        ("app/__init__.py.jinja2",          "app/__init__.py"),
-        ("app/main.py.jinja2",              "app/main.py"),
-        ("app/routers/__init__.py.jinja2",  "app/routers/__init__.py"),
-        ("app/routers/health.py.jinja2",    "app/routers/health.py"),
-        ("app/schemas/__init__.py.jinja2",  "app/schemas/__init__.py"),
+        ("app/__init__.py.jinja2", "app/__init__.py"),
+        ("app/main.py.jinja2", "app/main.py"),
+        ("app/routers/__init__.py.jinja2", "app/routers/__init__.py"),
+        ("app/routers/health.py.jinja2", "app/routers/health.py"),
+        ("app/schemas/__init__.py.jinja2", "app/schemas/__init__.py"),
         ("app/services/__init__.py.jinja2", "app/services/__init__.py"),
-        ("app/core/__init__.py.jinja2",     "app/core/__init__.py"),
+        ("app/core/__init__.py.jinja2", "app/core/__init__.py"),
         # ── tests ───────────────────────────────────────────
-        ("tests/__init__.py.jinja2",        "tests/__init__.py"),
-        ("tests/test_main.py.jinja2",       "tests/test_main.py"),
+        ("tests/__init__.py.jinja2", "tests/__init__.py"),
+        ("tests/test_main.py.jinja2", "tests/test_main.py"),
         # ── project root files ──────────────────────────────
-        ("pyproject.toml.jinja2",           "pyproject.toml"),
-        ("Makefile.jinja2",                 "Makefile"),
-        (".env.jinja2",                     ".env"),
-        (".env.example.jinja2",             ".env.example"),
-        (".gitignore.jinja2",               ".gitignore"),
-        ("README.md.jinja2",                "README.md"),
+        ("pyproject.toml.jinja2", "pyproject.toml"),
+        ("Makefile.jinja2", "Makefile"),
+        (".env.jinja2", ".env"),
+        (".env.example.jinja2", ".env.example"),
+        (".gitignore.jinja2", ".gitignore"),
+        ("README.md.jinja2", "README.md"),
     ]
 
     if docker:
         files += [
-            ("Dockerfile.jinja2",              "Dockerfile"),
-            ("docker-compose.yml.jinja2",      "docker-compose.yml"),
+            ("Dockerfile.jinja2", "Dockerfile"),
+            ("docker-compose.yml.jinja2", "docker-compose.yml"),
         ]
 
     if docker and has_db:
@@ -73,10 +73,10 @@ def _file_map(cfg: dict) -> list[tuple[str, str]]:
 
     if advanced:
         files += [
-            ("app/core/config.py.jinja2",                    "app/core/config.py"),
-            ("app/core/logger.py.jinja2",                    "app/core/logger.py"),
-            (".github/workflows/ci.yml.jinja2",              ".github/workflows/ci.yml"),
-            (".pre-commit-config.yaml.jinja2",               ".pre-commit-config.yaml"),
+            ("app/core/config.py.jinja2", "app/core/config.py"),
+            ("app/core/logger.py.jinja2", "app/core/logger.py"),
+            (".github/workflows/ci.yml.jinja2", ".github/workflows/ci.yml"),
+            (".pre-commit-config.yaml.jinja2", ".pre-commit-config.yaml"),
         ]
 
     if locust:
