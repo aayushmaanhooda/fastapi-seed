@@ -98,13 +98,22 @@ def generate(cfg: dict, dest: Path) -> None:
 
         template = env.get_template(tmpl_name)
         rendered = template.render(**cfg)
-        out_path.write_text(rendered)
+        out_path.write_text(rendered, encoding="utf-8")
 
 
 def run_uv_sync(dest: Path) -> subprocess.CompletedProcess:
     """Run `uv sync` in the generated project directory."""
     return subprocess.run(
         ["uv", "sync"],
+        cwd=dest,
+        capture_output=False,
+    )
+
+
+def run_pre_commit_install(dest: Path) -> subprocess.CompletedProcess:
+    """Run `uv run pre-commit install` to wire up git hooks (advanced only)."""
+    return subprocess.run(
+        ["uv", "run", "pre-commit", "install"],
         cwd=dest,
         capture_output=False,
     )

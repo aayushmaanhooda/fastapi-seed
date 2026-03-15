@@ -19,7 +19,7 @@ from rich.panel import Panel
 from rich.text import Text
 
 from fastapi_seed import prompts
-from fastapi_seed.generator import generate, run_uv_sync
+from fastapi_seed.generator import generate, run_pre_commit_install, run_uv_sync
 
 app = typer.Typer(
     help="Scaffold a FastAPI project in seconds.",
@@ -132,6 +132,15 @@ def init(
         rprint("[bold red]✗[/] uv sync failed — run it manually inside the project folder.")
     else:
         rprint("[bold green]✓[/] Dependencies installed")
+
+    # Advanced: wire up pre-commit hooks automatically
+    if cfg["setup_type"] == "advanced":
+        with console.status("[bold #7c3aed]Setting up pre-commit hooks...[/]", spinner="dots"):
+            hook_result = run_pre_commit_install(dest)
+        if hook_result.returncode != 0:
+            rprint("[bold red]✗[/] pre-commit install failed — run it manually: uv run pre-commit install")
+        else:
+            rprint("[bold green]✓[/] Pre-commit hooks installed")
 
     print()
     _success_panel(cfg["project_name"], dest, cfg)

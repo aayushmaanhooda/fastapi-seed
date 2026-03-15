@@ -65,18 +65,18 @@ def test_advanced_generates_extra_files(tmp_path: Path):
 
 def test_main_py_is_minimal(tmp_path: Path):
     generate(MINIMAL_CFG, tmp_path)
-    content = (tmp_path / "app" / "main.py").read_text()
+    content = (tmp_path / "app" / "main.py").read_text(encoding="utf-8")
     lines = [line for line in content.splitlines() if line.strip()]
     assert len(lines) <= 20, f"main.py has {len(lines)} non-empty lines — keep it under 20"
 
 
 def test_project_name_in_main(tmp_path: Path):
     generate(MINIMAL_CFG, tmp_path)
-    content = (tmp_path / "app" / "main.py").read_text()
+    content = (tmp_path / "app" / "main.py").read_text(encoding="utf-8")
     assert "test-project" in content
 
 
 def test_docker_compose_has_db_service(tmp_path: Path):
     generate(ADVANCED_CFG, tmp_path)
-    content = (tmp_path / "docker-compose.yml").read_text()
+    content = (tmp_path / "docker-compose.yml").read_text(encoding="utf-8")
     assert "postgres" in content
