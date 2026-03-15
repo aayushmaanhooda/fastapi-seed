@@ -5,7 +5,7 @@
 
 **Scaffold a production-ready or hobby-ready FastAPI project in seconds.**
 
-Like `create-vite` but for Python — answer 5 questions, get a fully structured FastAPI project ready to run.
+Like `create-vite` but for Python, answer 5 questions, get a fully structured FastAPI project ready to run.
 
 ```bash
 uvx fastapi-seed init my-project   # scaffold into new folder
