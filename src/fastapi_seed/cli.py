@@ -10,6 +10,7 @@ Why rich?
   We keep it minimal: just enough to feel polished without being loud.
 """
 
+import shutil
 from pathlib import Path
 
 import typer
@@ -101,6 +102,17 @@ def init(
     ),
 ) -> None:
     """Scaffold a new FastAPI project."""
+    if shutil.which("uv") is None:
+        rprint("[bold red]✗[/] uv is not installed or not in PATH.")
+        rprint("  Install: [bold cyan]https://docs.astral.sh/uv/getting-started/installation/[/]")
+        raise typer.Exit(1)
+    
+    if shutil.which("git") is None:
+        rprint("[bold red]✗[/] git is not installed or not in PATH.")
+        rprint("  Install: [bold cyan]https://git-scm.com/downloads[/]")
+        raise typer.Exit(1)
+
+
     _banner()
 
     # Resolve destination path
