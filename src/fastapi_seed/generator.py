@@ -110,6 +110,15 @@ def run_uv_sync(dest: Path) -> subprocess.CompletedProcess:
     )
 
 
+def run_git_init(dest: Path) -> subprocess.CompletedProcess:
+    """Run `git init` in the generated project directory."""
+    return subprocess.run(
+        ["git", "init"],
+        cwd=dest,
+        capture_output=True,
+    )
+
+
 def run_pre_commit_install(dest: Path) -> subprocess.CompletedProcess:
     """Run `uv run pre-commit install` to wire up git hooks (advanced only)."""
     return subprocess.run(

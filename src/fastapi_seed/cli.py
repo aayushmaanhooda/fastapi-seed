@@ -19,7 +19,7 @@ from rich.panel import Panel
 from rich.text import Text
 
 from fastapi_seed import prompts
-from fastapi_seed.generator import generate, run_pre_commit_install, run_uv_sync
+from fastapi_seed.generator import generate, run_git_init, run_pre_commit_install, run_uv_sync
 
 app = typer.Typer(
     help="Scaffold a FastAPI project in seconds.",
@@ -126,6 +126,10 @@ def init(
         generate(cfg, dest)
 
     rprint("[bold green]✓[/] Files generated")
+
+    # Initialize git repo
+    run_git_init(dest)
+    rprint("[bold green]✓[/] Git repository initialized")
 
     # Run uv sync
     with console.status(
