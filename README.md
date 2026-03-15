@@ -1,6 +1,9 @@
 <p align="center">
   <img src="banner.png" alt="fastapi-seed" width="600"/>
 </p>
+<p align="center">
+  <b>A CLI scaffold tool for FastAPI projects.</b><br/>
+</p>
 
 <p align="left">
   <b>A CLI scaffold tool for FastAPI projects.</b><br/>
