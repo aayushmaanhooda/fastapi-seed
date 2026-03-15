@@ -2,12 +2,12 @@
   <img src="banner.png" alt="fastapi-seed" width="600"/>
 </p>
 
-# 🌱 fastapi-seed
+# 🌱 Scaffold a production-ready or hobby-ready FastAPI project in seconds.
 
 [![PyPI version](https://img.shields.io/pypi/v/fastapi-seed.svg)](https://pypi.org/project/fastapi-seed/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Scaffold a production-ready or hobby-ready FastAPI project in seconds.**
+<!-- **Scaffold a production-ready or hobby-ready FastAPI project in seconds.** -->
 
 Like `create-vite` but for Python, answer 5 questions, get a fully structured FastAPI project ready to run.
 
