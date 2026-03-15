@@ -4,7 +4,7 @@
 
 <p align="center">
   <b>A CLI scaffold tool for FastAPI projects.</b><br/>
-  Like <code>create-vite</code> but for Python - answer 5 questions, get a production-ready FastAPI project instantly.
+  Like <code>create-vite</code> but for Python - answer few questions, get a production-ready or hobby-ready FastAPI project instantly.
 </p>
 
 <p align="center">
