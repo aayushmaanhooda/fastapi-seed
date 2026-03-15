@@ -6,9 +6,8 @@
 </p>
 
 <p align="center">
-  Stop copy-pasting project structures. One command, five questions —<br/>
+  Stop copy-pasting project structures. One command, few questions<br/>
   and your FastAPI project is <b>scaffolded, installed, and ready to run.</b><br/><br/>
-  Batteries included: <code>uv</code> · Docker · PostgreSQL · CI/CD · Locust load testing.<br/>
   No tutorial bloat. No manual setup. Just open your editor and start building.
 </p>
 
