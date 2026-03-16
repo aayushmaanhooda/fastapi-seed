@@ -26,13 +26,25 @@ app = typer.Typer(
     help="Scaffold a FastAPI project in seconds.",
     add_completion=False,
     no_args_is_help=True,
+    invoke_without_command=True,
 )
 console = Console()
 
 
 @app.callback()
-def _main() -> None:
+def _main(
+    version: bool = typer.Option(
+        None,
+        "--version",
+        "-v",
+        is_eager=True,
+        help="Show version and exit.",
+    ),
+) -> None:
     """fastapi-seed — scaffold FastAPI projects in seconds."""
+    if version:
+        rprint("fastapi-seed 0.1.6")
+        raise typer.Exit()
 
 
 def _banner() -> None:

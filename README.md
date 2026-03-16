@@ -129,4 +129,7 @@ MIT
 **Changed**
 - Python support expanded from `>=3.13` to `>=3.11` — works on 3.11, 3.12, and 3.13
 
+**Added**
+- `--version` / `-v` flag — `fastapi-seed --version` now prints the current version and exits
+
 ### [0.1.5] - initial release
