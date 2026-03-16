@@ -119,7 +119,7 @@ MIT
 
 ## Changelog
 
-### [0.1.6] - 2026-03-16
+### [0.1.7] - 2026-03-16
 
 **Fixed**
 - `uv` not installed now shows a clear error with install link instead of a crash (`FileNotFoundError` on Windows)
