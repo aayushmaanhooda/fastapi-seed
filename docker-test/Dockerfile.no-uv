@@ -1,0 +1,14 @@
+# Test scenario: user has Python + git but NO uv installed
+# Expected: CLI shows "uv is not installed" error immediately
+
+FROM python:3.11-slim
+
+# install git only (no uv)
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
+# copy project source and install fastapi-seed locally
+WORKDIR /app
+COPY . .
+RUN pip install --quiet .
+
+CMD ["fastapi-seed", "init", "test-project"]

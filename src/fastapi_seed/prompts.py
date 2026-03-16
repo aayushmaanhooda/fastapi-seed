@@ -52,6 +52,8 @@ def ask(project_name: str | None = None) -> dict:
             qmark="◇",
             style=_style,
         ).ask()
+        if project_name is None:
+            raise KeyboardInterrupt
         _checkpoint("Project name", project_name)
 
     setup_type = questionary.select(
@@ -60,6 +62,8 @@ def ask(project_name: str | None = None) -> dict:
         qmark="◇",
         style=_style,
     ).ask()
+    if setup_type is None:
+        raise KeyboardInterrupt
     _checkpoint("Setup type", setup_type)
 
     docker_ans = questionary.select(
@@ -68,6 +72,8 @@ def ask(project_name: str | None = None) -> dict:
         qmark="◇",
         style=_style,
     ).ask()
+    if docker_ans is None:
+        raise KeyboardInterrupt
     _checkpoint("Docker", docker_ans)
     use_docker = docker_ans == "Yes"
 
@@ -79,6 +85,8 @@ def ask(project_name: str | None = None) -> dict:
             qmark="◇",
             style=_style,
         ).ask()
+        if db_choice is None:
+            raise KeyboardInterrupt
         _checkpoint("Database", db_choice)
         database = db_choice.lower()
 
@@ -88,6 +96,8 @@ def ask(project_name: str | None = None) -> dict:
         qmark="◇",
         style=_style,
     ).ask()
+    if locust_ans is None:
+        raise KeyboardInterrupt
     _checkpoint("Load testing", locust_ans)
     use_locust = locust_ans == "Yes"
 
